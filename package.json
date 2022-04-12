@@ -1,6 +1,6 @@
 {
   "name": "@skhemata/skhemata-portfolio",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Skhemata Site Portfolio Web Component. This web component provides website client work portfolio functionality.",
   "author": "skhemata-portfolio",
   "main": "dist/index.js",
