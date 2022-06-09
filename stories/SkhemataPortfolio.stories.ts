@@ -9,9 +9,10 @@ export default {
   },
   parameters: {
     widgetCode: `
-    <skhemata-portfolio config-src="https://cdn.jsdelivr.net/npm/@skhemata/skhemata-portfolio@latest/demo/projects.json"></skhemata-portfolio>
+      <skhemata-portfolio config-src="https://cdn.jsdelivr.net/npm/@skhemata/skhemata-portfolio@latest/demo/projects.json"></skhemata-portfolio>
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@skhemata/skhemata-portfolio@latest/build/index.js"></script> `,
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@skhemata/skhemata-portfolio@latest/build/index.js"></script> 
+    `,
   },
 };
 
