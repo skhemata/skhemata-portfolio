@@ -7,6 +7,12 @@ export default {
   argTypes: {
     configData: { control: 'object' },
   },
+  parameters: {
+    widgetCode: `
+    <skhemata-portfolio config-src="https://cdn.jsdelivr.net/npm/@skhemata/skhemata-portfolio@latest/demo/projects.json"></skhemata-portfolio>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@skhemata/skhemata-portfolio@latest/build/index.js"></script> `,
+  },
 };
 
 interface Story<T> {
