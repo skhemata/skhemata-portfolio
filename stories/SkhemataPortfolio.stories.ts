@@ -5,7 +5,35 @@ export default {
   title: 'General/SkhemataPortfolio',
   component: 'skhemata-portfolio',
   argTypes: {
-    configData: { control: 'object' },
+    configData: {
+      name: 'config-data',
+      control: 'object',
+      description: 'Array of portfolio data',
+      table: {
+        category: 'HTML Attributes',
+        type: 'object'
+      }
+    },
+    portfolioBackgroundColor: {
+      name: '--skhemata-portfolio-background-color',
+      control: 'color',
+      defaultValue: 'rgb(255, 193, 7)',
+      description: 'Color of the portfolio background',
+      table: {
+        category: 'CSS Properties',
+        type: 'string'
+      }
+    },
+    portfolioTextColor: {
+      name: '--skhemata-portfolio-text-color',
+      control: 'color',
+      defaultValue: 'rgb(255, 255, 255)',
+      description: 'Color of the portfolio text',
+      table: {
+        category: 'CSS Properties',
+        type: 'string'
+      }
+    },
   },
   parameters: {
     widgetCode: `
@@ -25,6 +53,8 @@ interface Story<T> {
 
 interface ArgTypes {
   configData: any;
+  portfolioBackgroundColor?: string;
+  portfolioTextColor?: string;
 }
 
 const portfolioData = [
@@ -34,6 +64,7 @@ const portfolioData = [
     siteLink: 'https://www.devradius.com',
     projectDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    siteName: "my new site"
   },
   {
     title: 'Project Two',
@@ -41,6 +72,7 @@ const portfolioData = [
     siteLink: 'https://www.devradius.com',
     projectDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    siteName: "my new site"
   },
   {
     title: 'Project Three',
@@ -72,12 +104,18 @@ const portfolioData = [
   },
 ];
 
-const element = ({ configData }: any) => html`
+const element = ({ configData, portfolioBackgroundColor, portfolioTextColor }: any) => html`
+  <style>
+  body {
+      --skhemata-portfolio-background-color: ${portfolioBackgroundColor};
+      --skhemata-portfolio-text-color: ${portfolioTextColor};
+  }
+  </style>
   <skhemata-portfolio .configData=${configData}> </skhemata-portfolio>
 `;
 
-const Template: Story<ArgTypes> = ({ configData }: ArgTypes) =>
-  element({ configData });
+const Template: Story<ArgTypes> = ({ configData, portfolioBackgroundColor, portfolioTextColor }: ArgTypes) =>
+  element({ configData, portfolioBackgroundColor, portfolioTextColor });
 
 export const Default = Template.bind({});
 Default.args = {

@@ -39,14 +39,15 @@ export class SkhemataPortfolio extends SkhemataBase {
 
                   <div class="project-text project-link">
                     <p>
-                      View Site
-                      <i
-                        ><fa-icon
-                          .icon=${faArrowCircleRight}
-                          size="2x"
-                        ></fa-icon
-                      ></i>
+                      ${element.siteName ? element.siteName : 'Visit site'}
                     </p>
+                    <i
+                      ><fa-icon
+                        .icon=${faArrowCircleRight}
+                        size="2x"
+                      ></fa-icon
+                    ></i>
+                  
                   </div>
                 </div>
               </div>

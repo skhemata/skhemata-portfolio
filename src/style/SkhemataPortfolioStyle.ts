@@ -22,8 +22,8 @@ export const SkhemataPortfolioStyle = css`
       max-height: calc(calc(800px / 2) - 15px);
       /* calculate max height of vertical-work-item */ }
     .work-template .work-item:hover {
-      -webkit-box-shadow: 0px 0px 0px 2px #ffc107;
-      box-shadow: 0px 0px 0px 2px #ffc107; }
+      -webkit-box-shadow: 0px 0px 0px 2px var(--skhemata-portfolio-background-color, rgb(255, 193, 7));
+      box-shadow: 0px 0px 0px 2px var(--skhemata-portfolio-background-color, rgb(255, 193, 7)); }
       .work-template .work-item:hover .work-overlay {
         -webkit-transform: scale(35);
         transform: scale(35); }
@@ -38,7 +38,7 @@ export const SkhemataPortfolioStyle = css`
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background: #ffc107;
+      background: var(--skhemata-portfolio-background-color, rgb(255, 193, 7));
       -webkit-transform: scale(1);
       transform: scale(1);
       -webkit-transition: all 0.6s;
@@ -51,7 +51,7 @@ export const SkhemataPortfolioStyle = css`
       left: 0;
       right: 0;
       z-index: 2;
-      color: #ffffff;
+      color: var(--skhemata-portfolio-text-color, rgb(255, 255, 255));
       text-align: center;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -91,6 +91,10 @@ export const SkhemataPortfolioStyle = css`
             font-size:17pt;
             text-transform: uppercase;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
         .project-text{
             margin-bottom: 10px;
